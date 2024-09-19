@@ -1,84 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://offline.ch/ict/paper.css" rel="stylesheet" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rechnung</title>
   </head>
+
   <body>
+    <header>
+      <img
+        class="image"
+        id="hocher-logo"
+        src="data:image/jpeg;base64,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"
+        alt="Hocher gmbh Logo"
+      />
+    </header>
 
-    <img
-      src="C:\Users\ÜK-G8\Documents\HTML & CSS\Rechnung\Bilder\hocher-gmbh-garage_1_Nero AI_Cartoon.jpeg"
-      alt="hocher gmbh Logo"
-      width="450"
-      height="200"
-    />
-    
-    <p>Manfred Muster</p>
-    <p>Musterstrasse 22</p>
-    <p>2222 Musterhausen</p>
-    
-    <p>Manfred Muster</p>
-    <p>Musterstrasse 22</p>
-    <p>2222 Musterhausen</p>
-    
-    <p>Adligenswil, 23. November 2017</p>
-    <hr />
-    <h1>Rechnung XX-XXXXX-XX</h1>
-    
-    <p>Wie vereinbart stellen wir Ihnen folgende Aufwände in Rechnung.</p>
-    
-    <table>
-      <tr>
-        <td>#</td>
-        <td>Beschreibung</td>
-        <td>Stückpreis [CHF]*</td>
-        <td>Anzahl</td>
-        <td>Preis [CHF]*</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Honda Jazz 2009</td>
-        <td>11'800</td>
-        <td>1</td>
-        <td>11'800</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Reifen wechsel</td>
-        <td>40</td>
-        <td>4</td>
-        <td>160</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Windschutzscheibe</td>
-        <td>280</td>
-        <td>1</td>
-        <td>280</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>12'240</td>
-      </tr>
-    </table>
-    
-<p>Vielen Dank für Ihr Vertrauen</p>
+    <main>
+      <section>
+        <div class="distanz-logo-text">
+          <p>Manfred Muster</p>
+          <p>Musterstrasse 22</p>
+          <p>2222 Musterhausen</p>
+        </div>
+        <div class="distanz-text">
+          <p>Manfred Muster</p>
+          <p>Musterstrasse 22</p>
+          <p>2222 Musterhausen</p>
+        </div>
+      </section>
 
-    <p>Freundliche Grüsse</p>
-    
-    <img src="C:\Users\ÜK-G8\Documents\HTML & CSS\Rechnung\Bilder\images.png" alt="Unterschrift" width="300" height="100">
-    
-<h2>Angang:</h2>
+      <section>
+        <div class="adress">
+          <p>Adligenswil, 23. November 2017</p>
+        </div>
 
-<ul>
-    <li>Garantien</li>
-    <li>Handbücher</li>
-</ul>
+        <h1>Rechnung XX-XXXXX-XX</h1>
 
+        <p>Wie vereinbart stellen wir Ihnen folgende Aufwände in Rechnung.</p>
+      </section>
 
+      <section>
+        <table class="table">
+          <tr class="designation">
+            <td>#</td>
+            <td>Beschreibung</td>
+            <td>Stückpreis [CHF]*</td>
+            <td>Anzahl</td>
+            <td>Preis [CHF]*</td>
+          </tr>
+          <tr>
+            <td class="gray">1</td>
+            <td>Honda Jazz 2009</td>
+            <td>11'800</td>
+            <td>1</td>
+            <td>11'800</td>
+          </tr>
+          <tr>
+            <td class="gray">2</td>
+            <td>Reifen wechsel</td>
+            <td>40</td>
+            <td>4</td>
+            <td>160</td>
+          </tr>
+          <tr>
+            <td class="gray">3</td>
+            <td>Windschutzscheibe</td>
+            <td>280</td>
+            <td>1</td>
+            <td>280</td>
+          </tr>
+          <tr>
+            <td class="non-border"></td>
+            <td class="non-border"></td>
+            <td class="non-border"></td>
+            <td class="non-border"></td>
+            <td id="total">12'240</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <p class="distanz-50px">Vielen Dank für Ihr Vertrauen</p>
+
+        <p>Freundliche Grüsse</p>
+
+        <img
+          class="image"
+          id="unterschrift"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSydalgFHc2SnjdXtLLq4sICG4NMeStrVQufw&s"
+          alt="Unterschrift"
+          width="300"
+          height="100"
+        />
+        <a
+          id="social-link"
+          href="https://github.com/platteXDlol"
+          target="_blank"
+          >platteXDlol</a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <h2 class="distanz-50px">Angang:</h2>
+
+      <ul class="list">
+        <li>Garantien</li>
+        <li>Handbücher</li>
+      </ul>
+    </footer>
   </body>
 </html>
